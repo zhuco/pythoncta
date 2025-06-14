@@ -1,0 +1,47 @@
+{
+  "strategies": [
+    {
+      "name": "GridStrategy_ENA",
+      "enabled": true,
+      "log_level": "DEBUG",
+      "exchange": "binance_futures",
+      "class_path": "strategies.grid_strategy.GridStrategy",
+      "params": {
+        "symbol": "ENA/USDC:USDC",
+        "spacing": 0.0003,
+        "order_value": 10,
+        "grid_levels": 6,
+        "leverage": 15,
+        "health_check_interval_seconds": 180,
+        "uniformity_threshold": 0.95
+      }
+    },
+    {
+      "name": "GridStrategy_ORDI",
+      "enabled": true,
+      "log_level": null,
+      "exchange": "binance_futures",
+      "class_path": "strategies.grid_strategy.GridStrategy",
+      "params": {
+        "symbol": "ORDI/USDC:USDC",
+        "spacing": 0.006,
+        "order_value": 10,
+        "grid_levels": 6,
+        "leverage": 10,
+        "health_check_interval_seconds": 180,
+        "uniformity_threshold": 0.95
+      }
+    },
+    {
+      "strategy_class": "FundingRateStrategy",
+      "strategy_id": "FundingRateArbitrage_1",
+      "enabled_exchanges": ["binance", "okx"],
+      "check_minute": 58,
+      "rate_threshold": 0.0025,
+      "position_size_usd": 50,
+      "open_time_offset_sec": 2,
+      "close_time_offset_ms": 10,
+      "log_level": "INFO"
+    }
+  ]
+} 

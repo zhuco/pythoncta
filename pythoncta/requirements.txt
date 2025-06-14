@@ -1,0 +1,7 @@
+ccxt
+loguru
+aiohttp
+websockets
+asyncio
+pyyaml
+apscheduler 
